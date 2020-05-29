@@ -4,7 +4,10 @@ import com.dansoftware.dock.docknode.DockNode;
 import com.dansoftware.dock.docksystem.DockSystem;
 import com.dansoftware.dock.position.DockPosition;
 import com.dansoftware.dock.util.DockTool;
+import com.dansoftware.dock.viewmode.event.SceneChangeEventHandler;
+import com.dansoftware.dock.viewmode.event.SceneChangedEvent;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -51,7 +54,6 @@ public class DockSystemTest extends Application {
         DockNode imageDemo = new DockNode(dockSystem, new ImageView(new Image(getClass().getResourceAsStream("/icons/picture.png"))), "Image");
         imageDemo.setContent(createImageView("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"));
         imageDemo.setDockPosition(DockPosition.BOTTOM_LEFT);
-
 
         imageDemo.show();
         faceBookDemo.show();

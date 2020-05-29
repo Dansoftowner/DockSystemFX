@@ -12,4 +12,27 @@
 <i>Dark Style + <a href="https://github.com/JFXtras/jfxtras-styles/tree/master/src/jmetro">JMetro</a>'s dark style</i>
 ![DockSystemFX w dark style](documentation/images/dark-example.jpg)
 
-## More documentation coming soon...
+## Features
+* Supports <b>8</b> dock-positions:
+    * `TOP>LEFT`
+    * `TOP>RIGHT`
+    * `LEFT>TOP`
+    * `LEFT>BOTTOM`
+    * `RIGHT>TOP`
+    * `RIGHT>BOTTOM`
+    * `BOTTOM>LEFT`
+    * `BOTTOM>RIGHT`
+
+* Supports <b>3</b> view modes:
+    * `PINNED` - the dock-panel is docked normally inside the dock-system
+    * `FLOAT` - the dock-panel is displayed inside a floating window
+    * `WINDOW` - the dock-panel is displayed inside a normal window
+
+* Supports internationalization
+* Supports the javaFX <b>CSS</b> based styling
+
+## How to include it into your project
+...
+
+## Quick example
+

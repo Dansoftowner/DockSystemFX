@@ -2,7 +2,14 @@ package com.dansoftware.dock.position;
 
 import com.dansoftware.dock.position.strategy.*;
 
+/**
+ * A DockPosition represents a paricular position on a {@link com.dansoftware.dock.docksystem.DockSystem}
+ */
 public enum DockPosition {
+    TOP_RIGHT("dock.options.pos.top.right", new TopRightStrategy()),
+
+    TOP_LEFT("dock.options.pos.top.left", new TopLeftStrategy()),
+
     LEFT_TOP("dock.options.pos.left.top", new LeftTopStrategy()),
 
     LEFT_BOTTOM("dock.options.pos.left.bottom", new LeftBottomStrategy()),
@@ -13,11 +20,7 @@ public enum DockPosition {
 
     RIGHT_TOP("dock.options.pos.right.top", new RightTopStrategy()),
 
-    RIGHT_BOTTOM("dock.options.pos.right.bottom", new RightBottomStrategy()),
-
-    TOP_RIGHT("dock.options.pos.top.right", new TopRightStrategy()),
-
-    TOP_LEFT("dock.options.pos.top.left", new TopLeftStrategy());
+    RIGHT_BOTTOM("dock.options.pos.right.bottom", new RightBottomStrategy());
 
     public static final String NAME_LOCALE_KEY = "dock.options.pos";
 
