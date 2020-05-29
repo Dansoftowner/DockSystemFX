@@ -37,10 +37,11 @@
 You can download a jar file from the releases. Every release has two jar files: one is a single jar without
 the dependencies and the other one is a fat jar that includes all dependencies. 
 
-#### 2. Using with Maven, Gradle etc ...
+#### 2. Using with Maven, Gradle etc...
 
 <b>Maven example:</b><br>
 
+Add JitPack.io to your repositories :
 ```xml
 <repositories>
    <repository>
@@ -49,14 +50,33 @@ the dependencies and the other one is a fat jar that includes all dependencies.
    </repository>
 </repositories>
 ```
+Add the dependency:
 ```xml
 <dependency>
-  <groupId>com.github.goxr3plus</groupId>
-  <artifactId>FX-BorderlessScene</artifactId>
-  <version>4.4.0</version>
+    <groupId>com.github.Dansoftowner</groupId>
+    <artifactId>DockSystemFX</artifactId>
+    <version>v1.0</version>
 </dependency>
+```
+
+<b>Gradle example</b>
+
+Add the repository:
+```groovy
+repositories {
+    //...
+    maven { url 'https://jitpack.io' }
+}
+```
+
+Add the dependency:
+```groovy
+dependencies {
+    implementation 'com.github.Dansoftowner:DockSystemFX:v1.0'
+}
 ```
 
 
 ## Quick example
 
+More documentation coming soon!
