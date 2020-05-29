@@ -1,6 +1,7 @@
 /* Dock-frame */
 .border-button {
     -fx-background-color: transparent;
+    -fx-padding: 2px;
 }
 
 .border-button :selected {
@@ -10,6 +11,7 @@
 .border-button .root-btn {
     -fx-spacing: 10;
     -fx-padding: 0 5 0 0;
+    -fx-min-height: 20;
 }
 
 .border-button .label {
@@ -52,6 +54,7 @@
 }
 
 .dock-title-bar .label {
+    -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-text-alignment: center;
     -fx-alignment: center;
@@ -69,6 +72,10 @@
 .dock-title-bar .close-btn {
     -fx-graphic: url(/com/dansoftware/dock/image/hide_white.png);
     -fx-padding: 2px;
+}
+
+.dock-title-bar .options-btn, .dock-title-bar .close-btn {
+    -fx-background-color: transparent;
 }
 
 .dock-options-menu {

@@ -18,6 +18,8 @@ import java.util.ResourceBundle;
 
 public class DockSystem<C extends Node> extends StackPane {
 
+    private DockPosition defaultDockPosition = DockPosition.LEFT_BOTTOM;
+
     private final ObservableList<DockNode> dockNodes = FXCollections.observableArrayList();
     private final ObjectProperty<C> center = new SimpleObjectProperty<>(this, "centerPane");
     private final DockFrame frame;
@@ -47,13 +49,17 @@ public class DockSystem<C extends Node> extends StackPane {
             Parent parent = dockNode.getParent();
             if (parent != null) {
                 SplitPane splitPane = (SplitPane) parent.getParent();
-                splitPane.getItems().remove(dockNode);
+                if (splitPane != null)
+                    splitPane.getItems().remove(dockNode);
             }
         }
     }
 
     public void dock(DockPosition pos, DockNode dockNode, boolean show) {
-        if (pos == null) pos = DockPosition.TOP_LEFT;
+        if (pos == null) {
+            dockNode.setDockPosition(defaultDockPosition);
+            return;
+        }
 
         this.frame.allocate(pos, dockNode.getBorderButton());
 
@@ -95,5 +101,13 @@ public class DockSystem<C extends Node> extends StackPane {
 
     public void setResourceBundle(ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
+    }
+
+    public DockPosition getDefaultDockPosition() {
+        return defaultDockPosition;
+    }
+
+    public void setDefaultDockPosition(DockPosition defaultDockPosition) {
+        this.defaultDockPosition = defaultDockPosition;
     }
 }

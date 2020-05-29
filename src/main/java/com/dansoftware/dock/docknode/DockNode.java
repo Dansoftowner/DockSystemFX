@@ -245,4 +245,8 @@ public class DockNode extends BorderPane {
     public void setOnSceneChanged(SceneChangeEventHandler onSceneChanged) {
         this.onSceneChanged.set(onSceneChanged);
     }
+
+    public void setGraphicStyleClass(String styleClass) {
+        this.borderButton.getGraphic().getStyleClass().add(styleClass);
+    }
 }

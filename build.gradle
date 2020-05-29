@@ -10,9 +10,21 @@ repositories {
     maven {
         url "https://jitpack.io"
     }
+
+    maven {
+        url  "https://dl.bintray.com/dukke/maven"
+    }
+
+    maven {
+        url "https://github.com/javaterminal/terminalfx/raw/master/releases"
+    }
+
+    maven {
+        url  "https://jetbrains.bintray.com/pty4j"
+    }
 }
 
 dependencies {
     compile group: 'com.github.goxr3plus', name:'FX-BorderlessScene', version: '4.4.0'
-    //testImplementation 'org.jfxtras:jmetro:8.6.11'
+    testImplementation 'org.jfxtras:jmetro:8.6.11'
 }

@@ -2,6 +2,7 @@ package com.dansoftware.dock.viewmode;
 
 import com.dansoftware.dock.docknode.DockNode;
 import com.dansoftware.dock.viewmode.event.SceneChangedEvent;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -38,7 +39,11 @@ public class WindowStrategy implements ViewModeStrategy {
     }
 
     protected Scene getScene(DockNode dockNode) {
-        return new Scene(new StackPane(dockNode));
+        Pane root = new StackPane();
+        Scene scene = new Scene(root);
+
+        root.getChildren().add(dockNode);
+        return scene;
     }
 
     protected final Stage getFloatingStage() {
