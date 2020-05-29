@@ -5,6 +5,7 @@
 <hr>
 
 ##Some screenshots
+
 <i>Light style + <a href="https://github.com/JFXtras/jfxtras-styles/tree/master/src/jmetro">JMetro</a>'s light style</i>
 ![DockSystemFX w dark style](documentation/images/light-example.jpg)
 
