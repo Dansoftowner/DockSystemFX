@@ -72,11 +72,12 @@ repositories {
 Add the dependency:
 ```groovy
 dependencies {
+    //...
     implementation 'com.github.Dansoftowner:DockSystemFX:v1.0'
 }
 ```
 
+## Documentation resources
 
-## Quick example
-
-More documentation coming soon!
+* [The structure](documentation/structure.md)
+* [How to use it in practice](documentation/usage.md)
