@@ -79,5 +79,5 @@ dependencies {
 
 ## Documentation resources
 
-* [The structure](documentation/structure.md)
+* [Structure](documentation/structure.md)
 * [How to use it in practice](documentation/usage.md)
