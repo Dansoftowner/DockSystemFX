@@ -33,11 +33,7 @@
 
 ## How to include it into your project
 
-#### 1. Manually
-You can download a jar file from the releases. Every release has two jar files: one is a single jar without
-the dependencies and the other one is a fat jar that includes all dependencies. 
-
-#### 2. Using with Maven, Gradle etc...
+#### Using with Maven, Gradle etc...
 
 <b>Maven example:</b><br>
 
