@@ -27,7 +27,7 @@ public class DockSystemTest extends Application {
         DockSystem<TabPane> dockSystem = new DockSystem<>((TabPane) createCenter());
         dockSystem.setResourceBundle(DockTool.getDefaultBundle());
 
-        DockNode webDockNode = new DockNode(dockSystem, new ImageView(new Image(getClass().getResourceAsStream("/icons/youtube.png"))), "Youtube");
+        DockNode webDockNode = new DockNode(dockSystem, "Youtube", new ImageView(new Image(getClass().getResourceAsStream("/icons/youtube.png"))));
         webDockNode.setContent(createWebView("http://youtube.com"));
         webDockNode.setDockPosition(DockPosition.LEFT_BOTTOM);
         webDockNode.setOnSceneChanged(event -> {
@@ -35,7 +35,7 @@ public class DockSystemTest extends Application {
             event.getScene().getStylesheets().add(DockTool.DARK_STYLE_SHEET);
         });
 
-        DockNode pdfJSDemo = new DockNode(dockSystem, new ImageView(new Image(getClass().getResourceAsStream("/icons/pdf.png"))), "PDF JS");
+        DockNode pdfJSDemo = new DockNode(dockSystem, "PDF JS", new ImageView(new Image(getClass().getResourceAsStream("/icons/pdf.png"))));
         pdfJSDemo.setContent(createWebView("https://mozilla.github.io/pdf.js/es5/web/viewer.html"));
         pdfJSDemo.setDockPosition(DockPosition.RIGHT_BOTTOM);
         pdfJSDemo.setOnSceneChanged(event -> {
@@ -44,14 +44,14 @@ public class DockSystemTest extends Application {
         });
 
         DockNode faceBookDemo =
-                new DockNode(dockSystem, new ImageView(new Image(getClass().getResourceAsStream("/icons/facebook.png"))), "Facebook");
+                new DockNode(dockSystem, "Facebook", new ImageView(new Image(getClass().getResourceAsStream("/icons/facebook.png"))));
         faceBookDemo.setContent(createWebView("http://www.fb.com"));
         faceBookDemo.setOnSceneChanged(event -> {
             new JMetro(Style.LIGHT).setScene(event.getScene());
             event.getScene().getStylesheets().add(DockTool.LIGHT_STYLE_SHEET);
         });
 
-        DockNode imageDemo = new DockNode(dockSystem, new ImageView(new Image(getClass().getResourceAsStream("/icons/picture.png"))), "Image");
+        DockNode imageDemo = new DockNode(dockSystem, "Image", new ImageView(new Image(getClass().getResourceAsStream("/icons/picture.png"))));
         imageDemo.setContent(createImageView("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"));
         imageDemo.setDockPosition(DockPosition.BOTTOM_LEFT);
 
@@ -69,7 +69,10 @@ public class DockSystemTest extends Application {
         primaryStage.setTitle("DockSystemFXDemo");
         primaryStage.show();
 
-
+        DockNode dockNode = new DockNode(dockSystem, "Tool window", new ImageView(new Image("path/to/your/icon")));
+        dockNode.setContent(new Label("Content"));
+        dockNode.setDockPosition(DockPosition.BOTTOM_RIGHT);
+        dockNode.show();
     }
 
     private Node createCenter() {
@@ -90,7 +93,7 @@ public class DockSystemTest extends Application {
 
     private Node createImageView(String url) {
         StackPane node = new StackPane();
-        node.setStyle("-fx-background-image: url(" + url +")");
+        node.setStyle("-fx-background-image: url(" + url + ")");
 
         return node;
     }

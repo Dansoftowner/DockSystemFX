@@ -161,4 +161,61 @@ Selecting the positions
 </tr>
 </table>
 
- 
+A `DockNode` consists of two areas: 
+* a TitleBar -> displays the title, a button that calls the options-menu, and a hide button.
+* an actual content -> it depends on you what it is
+
+In a `DockSystem` every `DockNode` has a `BorderButton` that is displayed on the `DockFrame`. 
+For example, if the title of a `DockNode` is "Tree", the `BorderButton` looks like this: <br>
+![BorderButton example](documentation/images/docknode-borderbutton-example.jpg)
+
+The menu can be called by right-clicking the `BorderButton` as well:
+
+<table>
+
+<tr>
+
+<td>
+
+![BorderButton menu example](documentation/images/docknode-borderbutton-viewmodemenu-example.jpg)
+
+</td>
+
+<td>
+
+![BorderButton menu example](documentation/images/docknode-borderbutton-positionmenu-example.jpg)
+
+</td>
+
+</tr>
+
+</table>
+
+#### Using DockNodes in code
+
+When we create a `DockNode`, we must specify the `DockSystem` and the title:
+```java
+DockNode dockNode = new DockNode(dockSystem, "Tool window");
+```
+Optionally, you can specify the graphic (icon) of the `DockNode` too:
+```java
+DockNode dockNode = new DockNode(dockSystem, "Tool window", new ImageView(new Image("path/to/your/icon")));
+```
+We should set the content of the `DockNode`:
+```java
+dockNode.setContent(new Label("Content"));
+```
+
+We can specify the initial dock-position:
+```java
+dockNode.setDockPosition(DockPosition.BOTTOM_RIGHT);
+```
+
+Now we can show it if we want:
+```java
+dockNode.show();
+```
+
+## Styling
+
+Coming soon
