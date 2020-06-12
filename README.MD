@@ -1,7 +1,7 @@
 # ![DockSystemFX](documentation/images/logo.png)
 
 <hr>
-<b align="center">Create advanced GUIs easily with this library!</b>
+<b align="center">Create advanced javaFX GUIs easily with this library!</b>
 <hr>
 
 ## Some screenshots
@@ -77,7 +77,88 @@ dependencies {
 }
 ```
 
-## Documentation resources
+## The structure of a DockSystem
 
-* [Structure](documentation/structure.md)
-* [How to use it in practice](documentation/usage.md)
+The image below illustrates the structure of a `DockSystem`:
+
+![The structure of a DockSystem](documentation/images/structure.png)
+
+As you can see a `DockSystem` consists of two important parts: 
+
+* a `DockFrame` -> responsible for displaying `BorderButton`s on the edges 
+* a `SplitPaneSystem` -> responsible for displaying `DockNode`s
+
+A `DockSystem` has a <b>center area</b> where the main content displayed. When all `DockNode` is closed, only 
+this part is visible.
+
+#### Creating a DockSystem object
+
+To create a `DockSystem` we need to pass a type parameter that defines what kind of `Node` we want
+to display on the <b>center area</b>.
+
+If we want to stay in general, we can do this:
+```java
+DockSystem<Node> dockSystem = new DockSystem<>();
+```
+In this case we can display any type of `Node` object in the center:
+```java
+dockSystem.setDockedCenter(new Button()); // OK
+dockSystem.setDockedCenter(new Pane()); // OK
+dockSystem.setDockedCenter(new BorderPane()); // OK 
+```
+
+But if we want to be more concrete, for example we can do this:
+```java
+DockSystem<StackPane> dockSystem = new DockSystem<>();
+```
+In this case only `StackPane` objects can be displayed in the center:
+```
+dockSystem.setDockedCenter(new Button()); // ERROR
+dockSystem.setDockedCenter(new Pane()); // ERROR
+dockSystem.setDockedCenter(new StackPane()); // OK
+```
+
+You can also use the constructor for defining the center:
+```java
+DockSystem<TabPane> dockSystem = new DockSystem<>(new TabPane());
+```
+
+## DockNodes
+
+A `DockNode` is a "tool window" that is displayed in a `SplitPaneSystem`.
+
+<table>
+<tr>
+<td>
+
+![DockNode example](documentation/images/docknode-example.jpg)
+
+</td>
+<td>
+
+<table>
+<tr>
+<td>
+
+![DockNode view modes](documentation/images/docknode-viewmodemenu-example.jpg)
+
+Selecting the view mode
+
+</td>
+</tr>
+<tr>
+<td>
+
+![DockNode positions](documentation/images/docknode-positionmenu-example.jpg)
+
+Selecting the positions
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+ 

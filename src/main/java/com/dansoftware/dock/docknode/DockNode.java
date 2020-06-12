@@ -95,13 +95,13 @@ public class DockNode extends BorderPane {
         SplitPane.setResizableWithParent(this, false);
     }
 
-    public DockNode(DockSystem<?> dockSystem, Node graphic, String title) {
-        this(dockSystem,title);
+    public DockNode(DockSystem<?> dockSystem, String title, Node graphic) {
+        this(dockSystem, title);
         this.setGraphic(graphic);
     }
 
-    public DockNode(DockSystem<?> dockSystem, Node graphic, String title, Node content) {
-        this(dockSystem, graphic, title);
+    public DockNode(DockSystem<?> dockSystem, String title, Node graphic, Node content) {
+        this(dockSystem, title, graphic);
         this.setCenter(content);
     }
 
