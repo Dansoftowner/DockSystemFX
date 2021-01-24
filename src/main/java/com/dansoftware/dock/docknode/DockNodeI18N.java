@@ -9,10 +9,10 @@ public class DockNodeI18N extends DockNode {
     }
 
     public DockNodeI18N(DockSystem<?> dockSystem, Node graphic, String title) {
-        super(dockSystem, graphic, dockSystem.getResourceBundle().getString(title));
+        super(dockSystem, dockSystem.getResourceBundle().getString(title), graphic);
     }
 
     public DockNodeI18N(DockSystem<?> dockSystem, Node graphic, String title, Node content) {
-        super(dockSystem, graphic, dockSystem.getResourceBundle().getString(title), content);
+        super(dockSystem, dockSystem.getResourceBundle().getString(title), graphic, content);
     }
 }

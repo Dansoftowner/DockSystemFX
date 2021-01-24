@@ -4,10 +4,7 @@ import com.dansoftware.dock.docknode.DockNode;
 import com.dansoftware.dock.docksystem.DockSystem;
 import com.dansoftware.dock.position.DockPosition;
 import com.dansoftware.dock.util.DockTool;
-import com.dansoftware.dock.viewmode.event.SceneChangeEventHandler;
-import com.dansoftware.dock.viewmode.event.SceneChangedEvent;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -62,17 +59,18 @@ public class DockSystemTest extends Application {
 
         Scene scene = new Scene(dockSystem);
 
-        new JMetro(Style.LIGHT).setScene(scene);
-        scene.getStylesheets().add(DockTool.LIGHT_STYLE_SHEET);
+        new JMetro(Style.DARK).setScene(scene);
+        scene.getStylesheets().add(DockTool.DARK_STYLE_SHEET);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("DockSystemFXDemo");
+        primaryStage.setMaximized(true);
         primaryStage.show();
 
-        DockNode dockNode = new DockNode(dockSystem, "Tool window", new ImageView(new Image("path/to/your/icon")));
+        /*DockNode dockNode = new DockNode(dockSystem, "Tool window", new ImageView(new Image("path/to/your/icon")));
         dockNode.setContent(new Label("Content"));
         dockNode.setDockPosition(DockPosition.BOTTOM_RIGHT);
-        dockNode.show();
+        dockNode.show();*/
     }
 
     private Node createCenter() {

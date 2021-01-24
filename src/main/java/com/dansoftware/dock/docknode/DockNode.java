@@ -10,6 +10,9 @@ import javafx.beans.property.*;
 import javafx.scene.Node;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+import java.util.function.Supplier;
 
 public class DockNode extends BorderPane {
 
@@ -66,6 +69,8 @@ public class DockNode extends BorderPane {
      */
     private final BooleanProperty showing = new SimpleBooleanProperty(this, "showing", false);
 
+    private final ObjectProperty<Supplier<Stage>> stageFactory = new SimpleObjectProperty<>(Stage::new);
+
     public DockNode(DockSystem<?> dockSystem, String title) {
         this.dockSystem.set(dockSystem);
         this.title.set(title);
@@ -110,7 +115,7 @@ public class DockNode extends BorderPane {
             if (getDockSystem() == null) return;
 
             if (isShowing) {
-                this.viewModeStrategy.show(this);
+                this.viewModeStrategy.show(this, stageFactory.get());
             } else {
                 this.viewModeStrategy.hide(this);
             }
@@ -152,6 +157,18 @@ public class DockNode extends BorderPane {
 
     public void hide() {
         setShowing(false);
+    }
+
+    public Supplier<Stage> getStageFactory() {
+        return stageFactory.get();
+    }
+
+    public ObjectProperty<Supplier<Stage>> stageFactoryProperty() {
+        return stageFactory;
+    }
+
+    public void setStageFactory(Supplier<Stage> stageFactory) {
+        this.stageFactory.set(stageFactory);
     }
 
     public SimpleObjectProperty<DockPosition> dockPositionProperty() {

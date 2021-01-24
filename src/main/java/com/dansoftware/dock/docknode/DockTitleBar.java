@@ -24,7 +24,6 @@ public class DockTitleBar extends BorderPane {
     private Label createLabel() {
         Label label = new Label();
         label.textProperty().bind(this.dockNode.titleProperty());
-
         return label;
     }
 
