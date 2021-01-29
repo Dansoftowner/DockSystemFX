@@ -159,6 +159,10 @@ public class DockNode extends BorderPane {
         setShowing(false);
     }
 
+    public ReadOnlyBooleanProperty showingProperty() {
+        return showing;
+    }
+
     public Supplier<Stage> getStageFactory() {
         return stageFactory.get();
     }
