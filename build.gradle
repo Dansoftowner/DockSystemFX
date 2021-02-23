@@ -24,7 +24,11 @@ repositories {
     }
 }
 
+compileJava {
+    options.compilerArgs += ["--add-reads", "dock.system.fx=ALL-UNNAMED"]
+}
+
 dependencies {
     compile group: 'com.github.goxr3plus', name:'FX-BorderlessScene', version: '4.4.0'
-    testImplementation 'org.jfxtras:jmetro:8.6.11'
+    testImplementation 'org.jfxtras:jmetro:11.6.11'
 }
