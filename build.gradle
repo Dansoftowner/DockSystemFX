@@ -1,11 +1,12 @@
 plugins {
     id 'java'
+    id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 javafx {
-    version = "15.0.1"
-    modules = [ 'javafx.controls', 'javafx.graphics' ]
+    version = "11.0.1"
+    modules = [ 'javafx.controls', 'javafx.graphics', 'javafx.web' ]
 }
 
 group 'org.example'
